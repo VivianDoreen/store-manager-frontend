@@ -25,4 +25,4 @@ jobs:
            ./cc-test-reporter before-build
            yarn test:coverage
            ./cc-test-reporter after-build --exit-code $?
-           
+
