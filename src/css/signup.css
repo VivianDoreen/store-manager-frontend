@@ -1,0 +1,72 @@
+.headingTwo{
+    border-top: 2px solid orangered;
+    color: black;   
+}
+.navlink{
+    float: right;
+    color: orange;
+}
+article{
+    width: 85%;
+    margin: 0px auto;
+}
+#system_info{
+    text-align: right;
+
+}
+#general_form{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#general_add{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: orangered;
+
+}
+.form-row{
+    padding: 0.5em;
+    letter-spacing: 0.1em;
+}
+.form-row-button{
+    width: 20%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+input:focus,
+button:focus{
+    outline: none;
+}
+button{
+    width: 100%;
+    border-radius: 20px;
+    background-color: orangered;
+    box-shadow: none;
+}
+input[type=text],input[type=number], input[type=file], input[type=email], select{
+    color: #000000;
+    font-family: poppins;
+    border-radius: 3px;
+}
+
+input[type=text], input[type=password], input[type=number], input[type=email], select{
+    width: 100%;
+    padding: 5px;
+    margin-top: 0.2cm;
+    border: 1px solid orange;
+}
+#role{
+    font-size: 17px;
+    font-family: poppins;
+}
+.success-respose{
+    position: absolute;
+    top: 50px;
+    left:200px;
+    color: darkgreen;
+    text-align: center;
+}

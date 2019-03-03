@@ -1,6 +1,5 @@
 import types from '../../actionType/type'
-import {fetchLoginSuccess, fetchLoginFailure} from '../../actionCreators/Login/loginCreator'
-import * as actions from "../../actionCreators/Login/loginCreator";
+import * as actions from "../../actionCreators/Signup/signupCreator";
 import axios from "axios";
 import moxios from "moxios";
 import configureMockStore from "redux-mock-store";
@@ -11,15 +10,15 @@ import MockAdapter from "axios-mock-adapter";
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('create signin failure', () => {
+describe('create signup failure', () => {
   it('should create an unsuccessful create user login action', () => {
       const error = { error: 'username doesnot exist' };
       const expectedAction = {
-          type: types.login_failure,
+          type: types.signup_failure,
           error: error,
       };
       
-      expect(actions.fetchLoginFailure(error)).toEqual(expectedAction)
+      expect(actions.fetchSignupFailure(error)).toEqual(expectedAction)
   })
 })
 
@@ -36,8 +35,8 @@ describe("login thunk actions", () => {
     moxios.uninstall();
   });
 
-  it("should LOGIN_SUCCESFULLY", () => {
-    moxios.stubRequest('https://b13challenge3.herokuapp.com/api/v1/auth/login', {
+  it("should signup_SUCCESFULLY", () => {
+    moxios.stubRequest('https://b13challenge3.herokuapp.com/api/v1/auth/signup', {
       status: 200,
       responseText: {
         user: {
@@ -48,7 +47,7 @@ describe("login thunk actions", () => {
 
     const expectedActions = [
       {
-        type: types.login_success,
+        type: types.signup_success,
         payload: {
           user: {
             token: "123456trgeqgaf",
@@ -59,13 +58,13 @@ describe("login thunk actions", () => {
 
     store
       .dispatch(
-        actions.signinAction(
+        actions.signupAction(
           {
             username: "nabulo",
             password: "password",
             email: "nabulo@gmail.com",  
           },
-          'https://b13challenge3.herokuapp.com/api/v1/auth/login'
+          'https://b13challenge3.herokuapp.com/api/v1/auth/signup'
         )
       )
       .then(() => {
@@ -73,8 +72,8 @@ describe("login thunk actions", () => {
       });
   });
 
-  it("should handle LOGIN_FAILURE", () => {
-    moxios.stubRequest('https://b13challenge3.herokuapp.com/api/v1/auth/login', {
+  it("should handle SUGNUP_FAILURE", () => {
+    moxios.stubRequest('https://b13challenge3.herokuapp.com/api/v1/auth/signup', {
       status: 400,
       responseText: {
         error: {
@@ -85,7 +84,7 @@ describe("login thunk actions", () => {
 
     const expectedActions = [
       {
-        type: types.login_failure,
+        type: types.signup_success,
         payload: {
           user: {
             token: "123456trgeqgaf"
@@ -95,13 +94,13 @@ describe("login thunk actions", () => {
     ];
     store
       .dispatch(
-        actions.signinAction(
+        actions.signupAction(
           {
             username: "nabulo",
             password: "password",
             email: "nabulodoreen@gmail.com",
           },
-          'https://ah-backend-guardians-staging.herokuapp.com/api/users/login/'
+          'https://ah-backend-guardians-staging.herokuapp.com/api/users/signup/'
         )
       ).then(() => {      
         expect(store.getActions()).toEqual(expectedActions);

@@ -4,7 +4,7 @@
   "description": "Store Manager is a web application that helps store owners manage sales and product inventory records.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server  --config ./webpack.config.js --mode development --hot --open --https",
+    "start": "webpack-dev-server  --config ./webpack.config.js --mode development --hot --open --http",
     "build": "webpack --mode production",
     "test": "jest",
     "test:coverage": "jest --coverage",
