@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from '../../presentational/Login/Login';
+import { connect } from 'react-redux';
+import signinAction from '../../redux/action/actionCreators/Login/loginCreator'
 
 export class LoginView extends Component {
 
@@ -11,37 +13,43 @@ export class LoginView extends Component {
 
   componentDidMount() {}
 
-  handleChange = (e) => {
-
+  handleChange = (e) => {    
     this.setState({
       [e.target.name]: e.target.value,
     });
 
   };
 
-  handleFormSubmit = (e) => {
+  componentWillReceiveProps(nextProps) {    
+    const { data, errors } = nextProps;
+    if (errors) {   
+      console.log(errors.data, "ERRORS");   
+      this.setState({ errors: errors.data});
+    } else if (data) {
+      console.log(data, "DATA");
+      this.setState({ data: data});
+      // this.props.history.push('/app');
+    }
+  }
 
+  handleFormSubmit = (e) => {
     e.preventDefault();
     const data = {
       email: this.state.email,
       password: this.state.password,
     };
-
+    this.props.signinAction(data)
   };
 
   render() {
 
     return (
       <div>
-        <h1>
-Store Manager
-        </h1>
-        <p id="welcome_text">
-Store Manager is a web application that helps store owners manage sales and product inventory records.
-        </p>
         <LoginForm
           changed={this.handleChange}
           FormSubmit={this.handleFormSubmit}
+          errors={this.state.errors}
+          data={this.state.data}
         />
       </div>
     );
@@ -49,4 +57,15 @@ Store Manager is a web application that helps store owners manage sales and prod
   }
 
 }
-export default LoginView;
+
+export const mapStateToProps = (state) => {
+  return {
+    data: state.signin.data,
+    errors: state.signin.errors,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { signinAction }
+)(LoginView);
