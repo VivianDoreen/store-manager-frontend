@@ -4,6 +4,8 @@ Store Manager is a web application that helps store owners manage sales and prod
 
 <a href="https://codeclimate.com/github/VivianDoreen/store-manager-frontend/test_coverage"><img src="https://api.codeclimate.com/v1/badges/69811cb0c41536b9df47/test_coverage" /></a>
 
+[![CircleCI](https://circleci.com/gh/VivianDoreen/store-manager-frontend.svg?style=svg)](https://circleci.com/gh/VivianDoreen/store-manager-frontend)
+
 ### How to test the repository
 
 - Clone the repository from your terminal with command **`https://github.com/VivianDoreen/store-manager-frontend.git`**
