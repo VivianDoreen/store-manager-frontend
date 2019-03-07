@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import LoginForm from '../../presentational/Login/Login';
+import SignupForm from '../../presentational/Home/Home';
 import { connect } from 'react-redux';
-import signinAction from '../../redux/action/actionCreators/Login/loginCreator'
+import signupAction from '../../redux/action/actionCreators/Signup/signupCreator'
 
-export class LoginView extends Component {
+export class HomeView extends Component {
+
   state = {
     value: '',
     errors: {},
     data: '',
   };
+
 
   handleChange = (e) => {    
     this.setState({
@@ -23,28 +25,32 @@ export class LoginView extends Component {
     if (errors) {   
       this.setState({ errors: errors.data});
     } else if (data) {
-      this.setState({ data: data});
-      this.props.history.push('/home');  
+          this.setState({ data: data});
     }
   }
 
   handleFormSubmit = (e) => {
     e.preventDefault();
     const data = {
+      name:this.state.name,
       email: this.state.email,
       password: this.state.password,
-    };    
-    this.props.signinAction(data)
+      confirm_password:this.state.confirm_password,
+      role:this.state.role,
+    }; 
+       
+    this.props.signupAction(data)
   };
 
   render() {
 
     return (
       <div>
-        <LoginForm
+        <SignupForm 
           changed={this.handleChange}
           FormSubmit={this.handleFormSubmit}
           errors={this.state.errors}
+          data={this.state.data}
         />
       </div>
     );
@@ -55,12 +61,12 @@ export class LoginView extends Component {
 
 export const mapStateToProps = (state) => {
   return {
-    data: state.signin.data,
-    errors: state.signin.errors,
+    data: state.signup.data,
+    errors: state.signup.errors,
   };
 };
 
 export default connect(
-  mapStateToProps,
-  { signinAction }
-)(LoginView);
+    mapStateToProps,
+    { signupAction }
+  )(HomeView);
