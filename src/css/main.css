@@ -6,13 +6,9 @@
 }
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
-<<<<<<< HEAD
-
-=======
     body{
         background-color: blue;
     }
->>>>>>> ft(login): Users should be able to Login to Store Manager
 	#logopng{
 		width:50px;
 		height:50px;
@@ -75,11 +71,7 @@ body{
     padding-bottom: 6rem;
     min-height: 100%;
     font-family: poppins;
-<<<<<<< HEAD
-    background-color: #F3F3F3;		
-=======
     /* background-color: #F3F3F3;		 */
->>>>>>> ft(login): Users should be able to Login to Store Manager
 }
 
 header{
@@ -140,19 +132,6 @@ button:focus,
 select{
     outline: none;
 }
-<<<<<<< HEAD
-input[type=text], input[type=email], input[type=password], .form-row, button, .form-row-forgot-password, .form-row-button, .custom-select select{
-    color: #ffffff;
-    font-family: poppins;
-}
-
-input[type=text], input[type=email], input[type=password], .custom-select select{
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 5px;
-    border-bottom: 1.48px solid #ffffff;
-=======
 
 input[type=text], input[type=email], input[type=password], .form-row, button, .form-row-forgot-password, .form-row-button, .custom-select select{
     color: #000000;
@@ -167,7 +146,6 @@ input[type=text], input[type=email], input[type=password]{
     padding-left: 23px;
     border: none;
     margin-bottom: 25px;
->>>>>>> ft(login): Users should be able to Login to Store Manager
 }
 
 .form-row, .custom-select{
@@ -186,15 +164,6 @@ button{
 	border:1px solid #ffffff;
     background-color: #ffffff;
     font-size: 1em;
-<<<<<<< HEAD
-    width: 60%;
-    color: #000000;
-    border-radius: 9px;
-    font-family: poppins;
-    padding: 13px;
-    font-weight: bolder;
-    /* border: 1px solid red; */
-=======
     width: 50%;
     color: #000000;
     border-radius: 29px;
@@ -203,18 +172,13 @@ button{
     font-weight: bolder;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     margin-bottom:40px;
->>>>>>> ft(login): Users should be able to Login to Store Manager
 }
 button:hover{
     color: #ffffff;
     border: 1px solid transparent;
-<<<<<<< HEAD
-    background-image: linear-gradient(orange, orangered);
-=======
     background-color: #000000;
     cursor: pointer;
     transition-duration: 1s;
->>>>>>> ft(login): Users should be able to Login to Store Manager
 }
 .form-row-forgot-password{
     text-align: center;
@@ -244,10 +208,6 @@ button:hover{
     position: relative;
     padding-left: 25px;
     margin-bottom: 12px;
-<<<<<<< HEAD
-    cursor: pointer;
-=======
->>>>>>> ft(login): Users should be able to Login to Store Manager
     font-size: 14px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -259,10 +219,6 @@ button:hover{
 .container input {
     position: absolute;
     opacity: 0;
-<<<<<<< HEAD
-    cursor: pointer;
-=======
->>>>>>> ft(login): Users should be able to Login to Store Manager
     height: 0;
     width: 0;
 }
@@ -337,16 +293,6 @@ footer{
 	color:#f4ce0f;
 	font-family:poppins;
 	}
-<<<<<<< HEAD
-.val_error{
-	width:100%;
-	text-align:center;
-	font-family:poppins;
-	font-size:16px;
-	color:red;
-	}
-=======
 label{
     width: 100%;
 }
->>>>>>> ft(login): Users should be able to Login to Store Manager
