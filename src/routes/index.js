@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LoginView from '../component/view/LoginView/LoginView';
-import App from '../component/App'
 import HomeView from '../component/view/Home/HomeView'
 
 const Routes = () => (
