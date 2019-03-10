@@ -1,13 +1,13 @@
+import axios from 'axios';
 import type from '../../actionType/type';
-import axios from 'axios'
 
-var headers = {
+const headers = {
   'Content-Type': 'application/json',
-}
+};
 
 export const fetchLoginSuccess = payload => ({
   type: type.login_success,
-  payload: payload,
+  payload,
 });
 
 export const fetchLoginFailure = error => ({
@@ -15,17 +15,21 @@ export const fetchLoginFailure = error => ({
   error,
 });
 
-export const signinAction = userData => (dispatch) => {
-  return (axios.post('https://b13challenge3.herokuapp.com/api/v1/auth/login', userData, { headers:headers })
-      .then(response=>{
-          if(response.data["x-access-token"]){
-            dispatch(fetchLoginSuccess(response.data["x-access-token"]))
-            window.localStorage.setItem('token', response.data['x-access-token']) 
-          }
-      }  
-      ) .catch((error) => {
-        dispatch(fetchLoginFailure(error.response))
-    })
-  )}
+export const signinAction = userData => dispatch => (axios.post('https://b13challenge3.herokuapp.com/api/v1/auth/login', userData, { headers })
+  .then((response) => {
+
+    if (response.data['x-access-token']) {
+
+      dispatch(fetchLoginSuccess(response.data['x-access-token']));
+      window.localStorage.setItem('token', response.data['x-access-token']);
+
+    }
+
+  }).catch((error) => {
+
+    dispatch(fetchLoginFailure(error.response));
+
+  })
+);
 
 export default signinAction;
