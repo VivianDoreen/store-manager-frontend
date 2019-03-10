@@ -1,18 +1,24 @@
-.headingTwo{
+
+label{
+color: black;
+}
+.landing-page{
+    background-color: #ffffff;
+}
+ .headingTwo{
     border-top: 2px solid orangered;
     color: black;   
 }
+
 .navlink{
     float: right;
     color: orange;
 }
-article{
-    width: 85%;
-    margin: 0px auto;
-}
-#system_info{
-    text-align: right;
 
+time{
+    float: right;
+    text-align: right;
+    margin-right: 5px;
 }
 #general_form{
     position: relative;
@@ -25,32 +31,40 @@ article{
     margin: 0 auto;
     text-align: center;
     color: orangered;
-
 }
-.form-row{
+.form-row2{
     padding: 0.5em;
     letter-spacing: 0.1em;
 }
-.form-row-button{
+.form-row2-button{
     width: 20%;
     margin: 0px auto;
     text-align: center;
 }
-
-input:focus,
-button:focus{
-    outline: none;
-}
-button{
+#button2{
     width: 100%;
     border-radius: 20px;
     background-color: orangered;
     box-shadow: none;
 }
+#button2:hover{
+    color: #ffffff;
+    border: 1px solid transparent;
+    background-color: #000000;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+#role{
+    font-size: 17px;
+    font-family: poppins;
+}
+input:focus,
+button:focus{
+    outline: none;
+}
 input[type=text],input[type=number], input[type=file], input[type=email], select{
     color: #000000;
     font-family: poppins;
-    border-radius: 3px;
 }
 
 input[type=text], input[type=password], input[type=number], input[type=email], select{
@@ -59,14 +73,63 @@ input[type=text], input[type=password], input[type=number], input[type=email], s
     margin-top: 0.2cm;
     border: 1px solid orange;
 }
-#role{
-    font-size: 17px;
-    font-family: poppins;
-}
 .success-respose{
     position: absolute;
     top: 50px;
     left:200px;
     color: darkgreen;
     text-align: center;
+} 
+article{
+    width: 85%;
+    margin: 0px auto;
 }
+
+
+/* On screens that are 992px wide or less, the background color is blue */
+@media screen and (max-width: 992px) {
+    .success-respose{
+        position: absolute;
+        top: 60px;
+        left:0px;
+        width: 100%;
+       font-size: 1.3em;
+    } 
+    .navlink{
+        padding-right: 10px;
+     }
+}
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 600px) {
+    .navlink{
+       padding-right: 10px;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    .form-row2-button{
+        margin-top:40px;
+        width: 50%;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 6px;
+    }
+    #button2{
+        border-radius: 10px;
+    }
+    .success-respose{
+        position: absolute;
+        top: 90px;
+        left:0px;
+        width: 100%;
+       font-size: 1em;
+    } 
+}
+@media screen and (max-width: 250px){
+
+}
+
+
+
+
+

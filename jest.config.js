@@ -48,8 +48,8 @@ module.exports = {
      *source file paths, matched files will skip transformation
      */
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  modulePathIgnorePatterns: ['<rootDir>/src/component/redux/store/combineStore.js', '<rootDir>/src/index.js',
-    '<rootDir>/src/component/redux/reducers/mainReducer.js', '<rootDir>/src/routes/index.js'],
+//   modulePathIgnorePatterns: ['<rootDir>/src/component/redux/store/combineStore.js', '<rootDir>/src/index.js',
+//     '<rootDir>/src/component/redux/reducers/mainReducer.js', '<rootDir>/src/routes/index.js'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/assetsTransformer.js',
     '\\.(css|less|scss)$': '<rootDir>/assetsTransformer.js',
