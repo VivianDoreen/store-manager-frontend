@@ -1,5 +1,6 @@
 import React from 'react';
 import NavLink from 'react-router-dom/NavLink';
+import Loader from '../../Loader/LoaderSignup'
 
 const SignupForm = props => (
   <div>
@@ -7,7 +8,7 @@ const SignupForm = props => (
       <h1 className="headingTwo">
         StoreManager
       </h1>
-      <NavLink className="navlink" to="/" onClick={() => localStorage.removeItem('x-access-token')}>
+      <NavLink className="navlink" to="/" onClick={() => localStorage.removeItem('token')}>
                   Logout
       </NavLink>
       <article>
@@ -20,6 +21,7 @@ const SignupForm = props => (
           </time>
         </div>
         <div id="general_form">
+        <p>{ props.onLoading ?<Loader/> :''}</p>
           <div id="general_add">
             <h2>
               Register Store Attendant
@@ -74,7 +76,7 @@ const SignupForm = props => (
               </select>
             </div>
             <div className="form-row2-button">
-              <button id= "button2">
+              <button id= "button2" disabled={props.onLoading}>
                 <font color="white">
                   Register
                 </font>

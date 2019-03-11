@@ -9,8 +9,16 @@ export class HomeView extends Component {
     value: '',
     errors: '',
     data: '',
+    loading:false,
   };
 
+  componentWillMount(){
+   console.log('hhh')
+   const token = localStorage.getItem('token');
+   if(!token){
+     this.props.history.push('/')
+   }
+  }
 
   handleChange = (e) => {
     console.log(e.target.value);
@@ -25,12 +33,12 @@ export class HomeView extends Component {
     const { data, errors } = nextProps;
 
     if (errors) {
-      this.setState({ errors: errors.data });
+      this.setState({ errors: errors.data, loading:false });
       this.setState({ data: ''});
 
     } else if (data) {
       this.setState({ errors: ''});
-      this.setState({ data });
+      this.setState({ data, loading:false });
 
     }
 
@@ -46,14 +54,13 @@ export class HomeView extends Component {
       confirm_password: this.state.confirm_password,
       role: this.state.role,
     };
-
     this.props.signupAction(data);
-
+    this.setState({loading:true})
   };
 
   render() {
-
-    return (
+    const {loading}=this.state;
+        return (
       <body className="landing-page">
         <div>
         <SignupForm
@@ -61,6 +68,7 @@ export class HomeView extends Component {
           FormSubmit={this.handleFormSubmit}
           errors={this.state.errors}
           data={this.state.data}
+          onLoading={loading}
         />
         </div>
       </body>
