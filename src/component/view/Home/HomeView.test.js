@@ -4,11 +4,13 @@ import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import { mapStateToProps, HomeView } from './HomeView';
 
+const push = jest.fn()
 const props = {
   errors: '',
   data: '',
   onChange: jest.fn(),
   onSubmit: jest.fn(),
+  history: { push },
 };
 
 describe('LoginView', () => {
@@ -54,7 +56,7 @@ describe('LoginView', () => {
       const newState = { errors: { data: 'efgrt' }, data: '', value: '' };
       wrapper.setProps(newState);
 
-      expect(wrapper.state()).toEqual({ data: '', errors: 'efgrt', value: '' });
+      expect(wrapper.state()).toEqual({ data: '', errors: 'efgrt', value: '', loading: false });
 
     });
 
@@ -62,7 +64,7 @@ describe('LoginView', () => {
 
       const newState = { data: 'efgrt', errors: '', value: '' };
       wrapper.setProps(newState);
-      expect(wrapper.state()).toEqual({ errors: "", data: 'efgrt', value: '' });
+      expect(wrapper.state()).toEqual({ errors: "", data: 'efgrt', value: '', loading: false });
 
     });
 
@@ -84,7 +86,7 @@ describe('LoginView', () => {
     it('call signup once', () => {
 
       const spy = sinon.spy(HomeView.prototype, 'componentWillReceiveProps');
-      const wrapper = shallow(<HomeView error={{}} />);
+      const wrapper = shallow(<HomeView error={{}} {...props} />);
       expect(spy).toHaveProperty('callCount', 0);
       wrapper.setProps({
         error:

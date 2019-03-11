@@ -56,7 +56,7 @@ describe('LoginView', () => {
       const newState = { errors: { data: 'efgrt' }, data: '', value: '' };
       wrapper.setProps(newState);
 
-      expect(wrapper.state()).toEqual({ data: '', errors: 'efgrt', value: '' });
+      expect(wrapper.state()).toEqual({ data: '', errors: 'efgrt', value: '', loading: false });
 
     });
 
@@ -64,7 +64,7 @@ describe('LoginView', () => {
 
       const newState = { data: 'efgrt', errors: '', value: '' };
       wrapper.setProps(newState);
-      expect(wrapper.state()).toEqual({ errors: {}, data: 'efgrt', value: '' });
+      expect(wrapper.state()).toEqual({ errors: {}, data: 'efgrt', value: '', loading: false });
 
     });
 

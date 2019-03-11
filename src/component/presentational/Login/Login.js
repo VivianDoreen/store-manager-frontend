@@ -1,7 +1,7 @@
 import React from 'react';
+import Loader from '../../Loader/Loader'
 
 const LoginForm = (props) => {
-    console.log(props, "=============PROPS");
   return(
   <div>
     <section>
@@ -11,6 +11,7 @@ const LoginForm = (props) => {
         </h1>
         <div className="login_form_title">
           Login
+       <p>{ props.onLoading ?<Loader/> :''}</p>
         </div>
         <form onSubmit={props.FormSubmit} id="login-form" name="login-form">
           <div className="form-row">
@@ -38,7 +39,7 @@ const LoginForm = (props) => {
             </font>
           </div>
           <div className="form-row-button">
-            <button id="login_button">
+          <button id="login_button" disabled={props.onLoading}>
               Login
             </button>
           </div>

@@ -85,6 +85,37 @@ article{
     margin: 0px auto;
 }
 
+#button2:disabled{
+    background-color: blue;
+}
+.lds-dual-ring {
+    position: absolute;
+    top:0px;
+    left: 150px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin-top: 1px;
+    border-radius: 50%;
+    border: 5px solid green;
+    border-color: green transparent green transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 /* On screens that are 992px wide or less, the background color is blue */
 @media screen and (max-width: 992px) {
@@ -117,6 +148,7 @@ article{
     #button2{
         border-radius: 10px;
     }
+
     .success-respose{
         position: absolute;
         top: 90px;

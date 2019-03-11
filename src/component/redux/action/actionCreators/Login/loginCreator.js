@@ -21,7 +21,7 @@ export const signinAction = userData => dispatch => (axios.post('https://b13chal
     if (response.data['x-access-token']) {
 
       dispatch(fetchLoginSuccess(response.data['x-access-token']));
-      window.localStorage.setItem('token', response.data['x-access-token']);
+      // localStorage.setItem('token', response.data['x-access-token']);
 
     }
 
