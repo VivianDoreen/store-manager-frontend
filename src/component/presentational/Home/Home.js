@@ -1,6 +1,6 @@
 import React from 'react';
 import NavLink from 'react-router-dom/NavLink';
-import Loader from '../../Loader/LoaderSignup'
+import Loader from '../../Loader/Loader'
 
 const SignupForm = props => (
   <div>
@@ -21,7 +21,7 @@ const SignupForm = props => (
           </time>
         </div>
         <div id="general_form">
-        <p>{ props.onLoading ?<Loader/> :''}</p>
+        <p className="pLoader">{ props.onLoading ?<Loader/> :''}</p>
           <div id="general_add">
             <h2>
               Register Store Attendant
