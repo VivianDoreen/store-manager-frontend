@@ -1,13 +1,14 @@
 import React from 'react';
 import NavLink from 'react-router-dom/NavLink';
-import Loader from '../../Loader/Loader'
+import Loader from '../../Loader/Loader';
+import NavBar from '../NavBar/NavBar';
+
 
 const SignupForm = props => (
   <div>
     <section>
-      <h1 className="headingTwo">
-        StoreManager
-      </h1>
+      <NavBar/>
+
       <NavLink className="navlink" to="/" onClick={() => localStorage.removeItem('token')}>
                   Logout
       </NavLink>
@@ -31,8 +32,11 @@ const SignupForm = props => (
             <p className="success-respose">
               {props.data ? 'Store attendant successfully registered' : ''}
             </p>
+            
             <p className="success-respose">
-              {props.errors.message ? props.errors.message : ''}
+            <font color='red'>
+              {props.errors.message == 'All fields are required'? props.errors.message: ''}
+            </font>
             </p>
             <div className="form-row2" id="message" />
               <div className="form-row2">
@@ -40,24 +44,37 @@ const SignupForm = props => (
                   Name:
                 </label>
                 <input id="name" name="name" type="text" onChange={props.changed} />
+                <font color="red">{props.errors.message == 'name is required'? props.errors.message: ''}</font>
+                  
               </div>
             <div className="form-row2">
               <label htmlFor="email">
+                
                 Email:
               </label>
               <input id="email" name="email" type="email" onChange={props.changed} />
+              <font color='red'>
+                    {props.errors.message == 'Email already exists' ? props.errors.message : ''}
+                    {props.errors.message == 'email is required'? props.errors.message: ''}
+                  </font>
             </div>
+            
             <div className="form-row2">
               <label htmlFor="password">
                 password:
               </label>
               <input id="password" name="password" type="password" onChange={props.changed} />
+              <font color="red">
+              {props.errors.message == 'password must be atleast 5 characters'? props.errors.message: ''}
+              {props.errors.message == 'password is required'? props.errors.message: ''}
+              </font>
             </div>
             <div className="form-row2">
               <label htmlFor="confirm_password">
                 Confirm password:
               </label>
-              <input id="confirm_password" name="confirm_password" type="password" onChange={props.changed} />
+             <input id="confirm_password" name="confirm_password" type="password" onChange={props.changed} />
+             <font color='red'>{props.errors.message == 'Passwords do not match' ? props.errors.message : ''}</font>
             </div>
             <div className="form-row2">
               <label className="labelRole" htmlFor="role">
@@ -74,6 +91,7 @@ const SignupForm = props => (
                   admin
                 </option>
               </select>
+              <font color="red">{props.errors.message == 'role must begin with a letter'? "role required": ''}</font>
             </div>
             <div className="form-row2-button">
               <button id= "button2" disabled={props.onLoading}>

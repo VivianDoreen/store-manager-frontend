@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import SignupForm from '../../presentational/Home/Home';
 import signupAction from '../../redux/action/actionCreators/Signup/signupCreator';
 import '../../../css/signup.css';
+
+
 export class HomeView extends Component {
 
   state = {
@@ -13,15 +15,13 @@ export class HomeView extends Component {
   };
 
   componentWillMount(){
-   console.log('hhh')
    const token = localStorage.getItem('token');
    if(!token){
-     this.props.history.push('/')
+     this.props.history.push('/login')
    }
   }
 
   handleChange = (e) => {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -39,7 +39,7 @@ export class HomeView extends Component {
     } else if (data) {
       this.setState({ errors: ''});
       this.setState({ data, loading:false });
-
+      // this.props.history.push('/')
     }
 
   }

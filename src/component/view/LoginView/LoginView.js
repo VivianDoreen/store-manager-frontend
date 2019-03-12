@@ -5,7 +5,6 @@ import signinAction from '../../redux/action/actionCreators/Login/loginCreator';
 import '../../../css/main.css';
 import { toast,ToastContainer} from 'react-toastify';
 
-// import Loader from '../../Loader/Loader'
 
 export class LoginView extends Component {
   state = {
@@ -24,7 +23,6 @@ export class LoginView extends Component {
   componentWillReceiveProps(nextProps) {
     const { data, errors } = nextProps;
     if (errors) {
-      console.log(errors, "Manyerrors");
       
       this.setState({ 
         errors: errors.data, 
@@ -39,7 +37,7 @@ export class LoginView extends Component {
       });
         localStorage.setItem('token',data)
   
-        nextProps.history.push('/home')
+        nextProps.history.push('/signup')
     }
   }
 
@@ -55,7 +53,6 @@ export class LoginView extends Component {
 
   render() {
     const {loading}=this.state;
-    const {deactivateButton}=this.state
     return (
       <div>
         <LoginForm
