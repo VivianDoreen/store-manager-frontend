@@ -15,5 +15,5 @@ Store Manager is a web application that helps store owners manage sales and prod
 - Run **`yarn start`** or **`npm start`** depending on your installation
 - Test the functionality out in the browser that you have been redirected to.
 Login details:
-## email:nabulod@gmail.com
+## email:nabulod@yahoo.com
 ## password:Nabulo@2018
