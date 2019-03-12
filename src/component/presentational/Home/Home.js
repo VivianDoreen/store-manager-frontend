@@ -29,7 +29,7 @@ const SignupForm = props => (
             </h2>
           </div>
           <form onSubmit={props.FormSubmit} id="user-form" name="pdt-form">
-            <p className="success-respose">
+            <p className="success-respose-register">
               {props.data ? 'Store attendant successfully registered' : ''}
             </p>
             
