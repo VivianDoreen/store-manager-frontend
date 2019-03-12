@@ -1,26 +1,24 @@
 import React from 'react';
-import Loader from '../../Loader/Loader'
+import Loader from '../../Loader/Loader';
+import NavBar from '../NavBar/NavBar';
+
 
 const LoginForm = (props) => {
   return(
   <div>
     <section>
+      <NavBar/>
       <div className="form-div">
-        <h1>
-          StoreManager
-        </h1>
         <div className="login_form_title">
           Login
-       <p>{ props.onLoading ?<Loader/> :''}</p>
+       <p className="loaderLogin">{ props.onLoading ?<Loader/> :''}</p>
         </div>
         <form onSubmit={props.FormSubmit} id="login-form" name="login-form">
           <div className="form-row">
             <div className="errorsLogin">
-              <font color="red">
                 <p>
                   {props.errors.message == 'Invalid username and password' ? props.errors.message : ''}
                 </p>
-              </font>
             </div>
             <label htmlFor="email">
               <i className="fas fa-envelope fa-1x" />

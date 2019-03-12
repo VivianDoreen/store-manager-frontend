@@ -127,12 +127,18 @@ article{
     }
 
     .success-respose{
+        color: red;
         position: absolute;
         top: 90px;
         left:0px;
         width: 100%;
        font-size: 1em;
     } 
+    .pLoader{
+        position: absolute;
+        top: 660px;
+        height: 10px;
+    }
 }
 @media screen and (max-width: 250px){
 

@@ -76,6 +76,7 @@ input[type=text], input[type=email], input[type=password]{
     margin-bottom: 25px;
     height:37px;
 }
+
 button{
 	border:none;
     background-color: orange;
@@ -98,6 +99,10 @@ button:hover{
 }
 button:disabled{
     background-color: blue;
+}
+
+.errorsLogin{
+    color:red;
 }
 .lds-dual-ring {
     display: inline-block;
@@ -139,6 +144,17 @@ button:disabled{
   section{
       width:100%;
   }
+  .errorsLogin{
+    color:red;
+    font-size: 4px;
+    text-align: center;
+}
+.loaderLogin{
+    position: absolute;
+    top:400px;
+    left:400px;
+}
+  
 }
 /* On screens that are 600px wide or less, the background color is olive */
 @media screen and (max-width: 600px) {
@@ -186,7 +202,19 @@ button{
     padding-top: 3em;
     text-align: center;
 }
+.errorsLogin{
+    color:red;
+    font-size: 4px;
+    text-align: center;
 }
+.loaderLogin{
+    position: absolute;
+    top:400px;
+    left:60px;
+}
+
+}
+
 @media screen and (max-width: 250px){
     h1{
         margin: 0px auto;
