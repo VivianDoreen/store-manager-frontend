@@ -39,9 +39,8 @@ export class HomeView extends Component {
     } else if (data) {
       this.setState({ errors: ''});
       this.setState({ data, loading:false });
-      // this.props.history.push('/')
+      this.props.history.push('/')
     }
-
   }
 
   handleFormSubmit = (e) => {
