@@ -13,7 +13,6 @@ export class NavBar extends Component {
                 isAuthenticated:true
             })
         }
-
     }
     render() {
         return (
