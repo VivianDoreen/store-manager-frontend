@@ -143,6 +143,7 @@
     "react-toastify": "^4.5.2",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
+    "redux-persist": "^5.11.0-alpha",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.1",
     "sinon": "^7.2.4",

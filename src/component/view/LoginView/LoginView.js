@@ -35,9 +35,14 @@ export class LoginView extends Component {
         data, 
         loading:false,
       });
-        localStorage.setItem('token',data)
-  
-        nextProps.history.push('/signup')
+        localStorage.setItem('token',data['x-access-token'])
+        if(data.role == 'admin'){
+          nextProps .history.push('/')
+        }
+        else if(data.role == 'attendant'){
+          nextProps .history.push('/attendant')
+        }
+       
     }
   }
 

@@ -25,6 +25,7 @@ h1{
 section{
 	width:80%;
     margin:0px auto;
+    overflow: scroll;
 	}
 
 .form-div{
@@ -52,7 +53,7 @@ section{
     }
 
 .form-row, .custom-select{
-	font-size:1.3em;
+	  font-size:1.3em;
     padding: 1em;
     letter-spacing: 0.1em;
 }
@@ -161,6 +162,10 @@ button:disabled{
   body {
     color: white;
   }
+  label{
+    margin-top:20px;
+    margin-bottom:0px; 
+  }
   h1{
     margin: 0px auto;
     font-size:2em;
@@ -174,14 +179,14 @@ button:disabled{
     margin:0px auto;
 }
 .login_form_title{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 #login-form{
   width: 100%;
   margin:0px auto;
   }
 .form-row, .custom-select{
-  font-size:1.2em;
+  font-size:1em;
   padding: 15px;
 }
 input[type=text], input[type=email], input[type=password]{
@@ -189,18 +194,18 @@ input[type=text], input[type=email], input[type=password]{
   border:1px solid orangered;
 }
 button{
-  width: 30%;
-  font-size: 1.5em;
-  padding: 6px;
-  border-radius: 7px;
-  font-weight: 400;
+  padding: 5px;
+  width: 90px;
+  margin-bottom:30px;
+  border-radius: 6px;
 }
 .form-row-button{
     width: 100%;
     margin: 0px auto;
     border-radius: 9px;
-    padding-top: 3em;
+    padding-top: 1em;
     text-align: center;
+    padding-bottom: 0px;
 }
 .errorsLogin{
     color:red;
@@ -209,10 +214,12 @@ button{
 }
 .loaderLogin{
     position: absolute;
-    top:400px;
+    top:350px;
     left:60px;
 }
-
+input[type=text], input[type=email], input[type=password]{
+  margin-bottom: 0px;
+}
 }
 
 @media screen and (max-width: 250px){
@@ -224,4 +231,5 @@ button{
         width:100%;
         margin:0px auto;
     }
+    
 }
