@@ -32,7 +32,7 @@ const LoginForm = (props) => {
             </label>
             <input id="password" name="password" type="password" onChange={props.changed} required />
             <font color="red">
-              {props.errors.message == 'Wrong password' ? props.errors.message : ''}
+              {props.errors.message == 'Wrong password' ? "wrong password or username" : ''}
               {props.errors.Error ? 'Password must be atleast 5 characters' : ''}
             </font>
           </div>

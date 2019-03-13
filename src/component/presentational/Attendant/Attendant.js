@@ -1,7 +1,7 @@
 import NavBar from '../NavBar/NavBar';
 import React, { Component } from 'react';
 
-export class LandingPage extends Component {
+export class Attendant extends Component {
     render() {
         return (
             <div id="main_div">
@@ -9,7 +9,7 @@ export class LandingPage extends Component {
                 <NavBar/>
               <article>
                 <div id="general_content">
-                Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
+                    Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
                 </div>
               </article>
             </section>
@@ -18,4 +18,4 @@ export class LandingPage extends Component {
     }
 }
 
-export default LandingPage;
+export default Attendant;

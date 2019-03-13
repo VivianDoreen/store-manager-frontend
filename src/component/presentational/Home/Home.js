@@ -8,10 +8,6 @@ const SignupForm = props => (
   <div>
     <section>
       <NavBar/>
-
-      <NavLink className="navlink" to="/" onClick={() => localStorage.removeItem('token')}>
-                  Logout
-      </NavLink>
       <article>
         <div id="system_info">
           <time>
